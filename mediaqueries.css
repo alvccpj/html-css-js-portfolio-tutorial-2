@@ -91,6 +91,11 @@
     height: 46vw;
     justify-content: center;
   }
+  /* Garantir que a primeira foto (perfil) mantenha formato quadrado no mobile */
+  #profile .section__pic-container {
+    width: 46vw;
+    height: 46vw;
+  }
   .section__text__p2 {
     font-size: 1.25rem;
   }
