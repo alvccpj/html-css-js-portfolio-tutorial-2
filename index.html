@@ -1,398 +1,278 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Portfolio</title>
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2364B5F6'%3E%3Cpath d='M10 4H4c-1.11 0-2 .89-2 2v12c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2h-8l-2-2z'/%3E%3C/svg%3E" />
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="mediaqueries.css" />
-  </head>
-  <body>
-    <nav id="desktop-nav">
-      <div class="logo">Álvaro Jordão</div>
-      <div>
-        <ul class="nav-links">
-          <li><a href="#about">About</a></li>
-          <li><a href="#experience">Experience</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
+<html lang="en" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AJ | Dev Portfolio</title>
+  <meta name="description"
+    content="Portfolio of Álvaro Jordão, Salesforce &amp; Fullstack Developer and Computer Science student." />
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0%25' stop-color='%235b6af0'/%3E%3Cstop offset='100%25' stop-color='%237c3aed'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='16' cy='16' r='16' fill='url(%23g)'/%3E%3Ctext x='16' y='21' font-family='Arial%2C sans-serif' font-size='13' font-weight='700' fill='white' text-anchor='middle' letter-spacing='0.5'%3EAJ%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="mediaqueries.css" />
+</head>
+
+<body>
+
+  <!-- ===== DESKTOP NAV ===== -->
+  <nav id="desktop-nav">
+    <a class="logo" href="#profile">Álvaro<span class="logo-accent">.</span></a>
+    <div class="nav-right">
+      <ul class="nav-links">
+        <li><a href="#about" data-i18n="nav.about">About</a></li>
+        <li><a href="#experience" data-i18n="nav.experience">Experience</a></li>
+        <li><a href="#projects" data-i18n="nav.projects">Projects</a></li>
+        <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
+      </ul>
+      <div class="nav-controls">
+        <button id="lang-toggle" class="toggle-btn" aria-label="Switch language"><span
+            id="lang-label">PT</span></button>
+        <button id="theme-toggle" class="toggle-btn" aria-label="Toggle theme"><span id="theme-icon">☀️</span></button>
       </div>
-    </nav>
-    <nav id="hamburger-nav">
-      <div class="logo">Álvaro Jordão</div>
-      <div class="hamburger-menu">
-        <div class="hamburger-icon" onclick="toggleMenu()">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-        <div class="menu-links">
-          <li><a href="#about" onclick="toggleMenu()">About</a></li>
-          <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
-          <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
-          <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
-        </div>
+    </div>
+  </nav>
+
+  <!-- ===== HAMBURGER NAV ===== -->
+  <nav id="hamburger-nav">
+    <a class="logo" href="#profile">Álvaro<span class="logo-accent">.</span></a>
+    <div class="hamburger-menu">
+      <div class="hamburger-icon" id="hamburger-icon" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
       </div>
-    </nav>
-    <section id="profile">
-      <div class="section__pic-container">
-        <img src="./assets/euu.jfif" alt="Álvaro Jordão profile picture" />
+      <div class="menu-links" id="menu-links">
+        <li><a href="#about" onclick="toggleMenu()" data-i18n="nav.about">About</a></li>
+        <li><a href="#experience" onclick="toggleMenu()" data-i18n="nav.experience">Experience</a></li>
+        <li><a href="#projects" onclick="toggleMenu()" data-i18n="nav.projects">Projects</a></li>
+        <li><a href="#contact" onclick="toggleMenu()" data-i18n="nav.contact">Contact</a></li>
+        <li class="menu-controls">
+          <button id="lang-toggle-mobile" class="toggle-btn" onclick="toggleLang()"><span
+              id="lang-label-mobile">PT</span></button>
+          <button id="theme-toggle-mobile" class="toggle-btn" onclick="toggleTheme()"><span
+              id="theme-icon-mobile">☀️</span></button>
+        </li>
       </div>
-      <div class="section__text">
-        <p class="section__text__p1">Hello, I'm</p>
-        <h1 class="title">Álvaro Jordão</h1>
-        <p class="section__text__p2">Salesforce Developer</p>
-        <div class="btn-container">
-          <button
-            class="btn btn-color-2"
-            onclick="window.open('./assets/CURRICULO ÁLVARO JORDÃO.pdf')"
-          >
-            Download CV
-          </button>
-          <button class="btn btn-color-1" onclick="location.href='./#contact'">
-            Contact info
-          </button>
-        </div>
-        <div id="socials-container">
-          <img
-            src="./assets/linkedin.png"
-            alt="My LinkedIn profile"
-            class="icon"
-            onclick="location.href='https://www.linkedin.com/in/devalvarojordao/'"
-          />
-          <img
-            src="./assets/github.png"
-            alt="My Github profile"
-            class="icon"
-            onclick="location.href='https://github.com/alvccpj'"
-          />
-        </div>
+    </div>
+  </nav>
+
+  <!-- ===== HERO / PROFILE ===== -->
+  <section id="profile">
+    <div class="hero-bg-orb orb-1"></div>
+    <div class="hero-bg-orb orb-2"></div>
+    <div class="section__pic-container animate-fade-in">
+      <div class="pic-ring"></div>
+      <img src="./assets/foto_d_open_2026.jfif" alt="Álvaro Jordão profile picture" />
+    </div>
+    <div class="section__text animate-fade-in-delay">
+      <p class="section__text__p1" data-i18n="profile.greeting">Hello, I'm</p>
+      <h1 class="title hero-name">Álvaro Jordão</h1>
+      <p class="section__text__p2" data-i18n="profile.role">Salesforce &amp; Fullstack Developer</p>
+      <div class="btn-container">
+        <button class="btn btn-primary" onclick="window.open('./assets/CURRICULO ÁLVARO JORDÃO.pdf')"
+          data-i18n="profile.downloadCV">Download CV</button>
+        <button class="btn btn-outline" onclick="location.href='#contact'" data-i18n="profile.contactInfo">Contact
+          info</button>
       </div>
-    </section>
-    <section id="about">
-      <p class="section__text__p1">Get To Know More</p>
-      <h1 class="title">About Me</h1>
-      <div class="section-container">
-        <div class="section__pic-container">
-          <img
-            src="./assets/euu 2.jfif"
-            alt="Profile picture"
-            class="about-pic"
-          />
-        </div>
-        <div class="about-details-container">
-          <div class="about-containers">
-            <div class="details-container">
-              <img
-                src="./assets/experience.png"
-                alt="Experience icon"
-                class="icon"
-              />
-              <h3>Experience</h3>
-              <p>Junior Salesforce Developer Analyst
-                <p>October/2024 - Now</p>
-              </p>
-            </div>
-            <div class="details-container">
-              <img
-                src="./assets/education.png"
-                alt="Education icon"
-                class="icon"
-              />
-              <h3>Education</h3>
-              <p>
-                Graduating in Computer Science - UNINASSAU <br />Shift:
-                Night
-              </p>
-            </div>
+      <div id="socials-container">
+        <a href="https://www.linkedin.com/in/devalvarojordao/" target="_blank" class="social-link"
+          aria-label="LinkedIn">
+          <img src="./assets/linkedin.png" alt="LinkedIn" class="icon social-icon" />
+        </a>
+        <a href="https://github.com/alvccpj" target="_blank" class="social-link" aria-label="GitHub">
+          <img src="./assets/github.png" alt="GitHub" class="icon social-icon" />
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section id="about">
+    <div class="section-orb about-orb"></div>
+    <div class="section-header reveal">
+      <p class="section__text__p1" data-i18n="about.subheading">Get To Know More</p>
+      <h1 class="title" data-i18n="about.title">About Me</h1>
+    </div>
+    <div class="section-container">
+      <div class="section__pic-container reveal">
+        <img src="./assets/foto_d_open_2025.jfif" alt="Álvaro Jordão" class="about-pic" />
+      </div>
+      <div class="about-details-container">
+        <div class="about-containers reveal">
+          <div class="details-container glass-card">
+            <img src="./assets/experience.png" alt="Experience icon" class="icon card-icon" />
+            <h3 data-i18n="about.experienceTitle">Experience</h3>
+            <p data-i18n="about.experienceRole">Junior Salesforce Developer Analyst</p>
+            <p class="period" data-i18n="about.experiencePeriod">October/2024 - Now</p>
           </div>
-          <div class="text-container">
-            <p>
-              Hi, my name is Álvaro, I'm a 6th period Computer Science student. 
-              I am very interested in the world of technology and software development, mainly in Cloud Computing and Backend.
-            </p>
-          </div>
-        </div>
-      </div>
-      <img
-        src="./assets/arrow.png"
-        alt="Arrow icon"
-        class="icon arrow"
-        onclick="location.href='./#experience'"
-      />
-    </section>
-    <section id="experience">
-      <p class="section__text__p1">Explore my</p>
-      <h1 class="title">Experience</h1>
-      <div class="experience-details-container">
-        <div class="about-containers">
-          <div class="details-container">
-            <h2 class="experience-sub-title">Backend Development</h2>
-            <div class="article-container">
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Java</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>MySQL</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Spring Boot</h3>
-                  <p>Basic</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Salesforce</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Apex</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Git/Github</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-            </div>
-          </div>
-          <div class="details-container">
-            <h2 class="experience-sub-title">Frontend Development</h2>
-            <div class="article-container">
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>HTML</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>CSS</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>JavaScript</h3>
-                  <p>Basic</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Nextjs</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Angular</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Ionic</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-            </div>
+          <div class="details-container glass-card">
+            <img src="./assets/education.png" alt="Education icon" class="icon card-icon" />
+            <h3 data-i18n="about.educationTitle">Education</h3>
+            <p data-i18n="about.educationDesc">Computer Science — UNINASSAU</p>
+            <p class="period" data-i18n="about.educationShift">Shift: Night</p>
           </div>
         </div>
-      </div>
-      <img
-        src="./assets/arrow.png"
-        alt="Arrow icon"
-        class="icon arrow"
-        onclick="location.href='./#projects'"
-      />
-    </section>
-    <section id="projects">
-      <p class="section__text__p1">Browse My Recent</p>
-      <h1 class="title">Projects</h1>
-      <div class="experience-details-container">
-        <div class="about-containers">
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img
-                src="./assets/project-1.png"
-                alt="Project 1"
-                class="project-img"
-              />
-            </div>
-            <h2 class="experience-sub-title project-title">
-              My first portfolio
-            </h2>
-            <div class="btn-container">
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/alvccpj/portfolio-alvaro'"
-              >
-                Github
-              </button>
-            </div>
-          </div>
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img
-                src="./assets/project-2.png"
-                alt="Project 2"
-                class="project-img"
-              />
-            </div>
-            <h2 class="experience-sub-title project-title">
-              Rest API for people management
-            </h2>
-            <div class="btn-container">
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/alvccpj/backend-laboratory'"
-              >
-                Github
-              </button>
-            </div>
-          </div>
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img
-                src="./assets/project-3.png"
-                alt="Project 3"
-                class="project-img"
-              />
-            </div>
-            <h2 class="experience-sub-title project-title">Organiza App: Finance Management</h2>
-            <div class="btn-container">
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/alvccpj/organiza-application'"
-              >
-                Github
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <img
-        src="./assets/arrow.png"
-        alt="Arrow icon"
-        class="icon arrow"
-        onclick="location.href='./#contact'"
-      />
-    </section>
-    <section id="contact">
-      <p class="section__text__p1">Get In Touch</p>
-      <h1 class="title">Contact Me</h1>
-      <div class="contact-info-upper-container">
-        <div class="contact-info-container">
-          <img
-            src="./assets/email.png"
-            alt="Email icon"
-            class="icon contact-icon email-icon"
-          />
-          <p>
-            <a href="mailto:examplemail@gmail.com"
-              >dev.alvarojordao@gmail.com</a
-            >
-          </p>
-        </div>
-        <div class="contact-info-container">
-          <img
-            src="./assets/linkedin.png"
-            alt="LinkedIn icon"
-            class="icon contact-icon"
-          />
-          <p>
-            <a href="https://www.linkedin.com/in/devalvarojordao/">LinkedIn</a>
+        <div class="text-container glass-card reveal">
+          <p data-i18n="about.bio">
+            Hi, my name is Álvaro, I'm a 6th period Computer Science student.
+            I am very interested in the world of technology and software development, mainly in Cloud Computing and
+            Backend.
           </p>
         </div>
       </div>
-    </section>
-    <footer>
-      <nav>
-        <div class="nav-links-container">
-          <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
+    </div>
+    <div class="arrow-container">
+      <img src="./assets/arrow.png" alt="Arrow" class="icon arrow" onclick="location.href='#experience'" />
+    </div>
+  </section>
+
+  <!-- ===== EXPERIENCE ===== -->
+  <section id="experience">
+    <div class="section-header reveal">
+      <p class="section__text__p1" data-i18n="experience.subheading">Explore My</p>
+      <h1 class="title" data-i18n="experience.title">Experience</h1>
+    </div>
+    <div class="experience-details-container">
+      <div class="about-containers">
+        <div class="details-container glass-card reveal">
+          <h2 class="experience-sub-title" data-i18n="experience.backendTitle">Backend Development</h2>
+          <div class="article-container">
+            <article class="skill-item">
+              <i class="devicon-java-plain colored skill-icon"></i>
+            </article>
+            <article class="skill-item">
+              <i class="devicon-mysql-plain colored skill-icon"></i>
+            </article>
+            <article class="skill-item">
+              <i class="devicon-spring-plain colored skill-icon"></i>
+            </article>
+            <article class="skill-item">
+              <i class="devicon-salesforce-plain colored skill-icon"></i>
+            </article>
+            <article class="skill-item">
+              <i class="devicon-postgresql-plain colored skill-icon"></i>
+            </article>
+            <article class="skill-item">
+              <i class="devicon-nodejs-plain colored skill-icon"></i>
+            </article>
+          </div>
         </div>
-      </nav>
-      <p>Copyright &#169; 2025 Álvaro Jordão. All Rights Reserved.</p>
-    </footer>
-    <script src="script.js"></script>
-  </body>
+        <div class="details-container glass-card reveal">
+          <h2 class="experience-sub-title" data-i18n="experience.frontendTitle">Frontend Development</h2>
+          <div class="article-container">
+            <article class="skill-item">
+              <i class="devicon-html5-plain colored skill-icon"></i>
+            </article>
+            <article class="skill-item">
+              <i class="devicon-css3-plain colored skill-icon"></i>
+            </article>
+            <article class="skill-item">
+              <i class="devicon-javascript-plain colored skill-icon"></i>
+            </article>
+            <article class="skill-item">
+              <i class="devicon-nextjs-plain colored skill-icon"></i>
+            </article>
+            <article class="skill-item">
+              <i class="devicon-react-original colored skill-icon"></i>
+            </article>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="arrow-container">
+      <img src="./assets/arrow.png" alt="Arrow" class="icon arrow" onclick="location.href='#projects'" />
+    </div>
+  </section>
+
+  <!-- ===== PROJECTS ===== -->
+  <section id="projects">
+    <div class="section-orb projects-orb"></div>
+    <div class="section-header reveal">
+      <p class="section__text__p1" data-i18n="projects.subheading">Browse My Recent</p>
+      <h1 class="title" data-i18n="projects.title">Projects</h1>
+    </div>
+    <div class="experience-details-container">
+      <div class="about-containers projects-grid">
+        <div class="details-container color-container project-card reveal">
+          <div class="project-img-wrapper">
+            <img src="./assets/project-1.png" alt="Project 1" class="project-img" />
+            <div class="project-overlay">
+              <button class="btn btn-sm"
+                onclick="location.href='https://github.com/alvccpj/portfolio-alvaro'">GitHub</button>
+            </div>
+          </div>
+          <h2 class="project-title" data-i18n="projects.p1Title">My first portfolio</h2>
+          <p class="project-tech">HTML · CSS · JS</p>
+        </div>
+        <div class="details-container color-container project-card reveal">
+          <div class="project-img-wrapper">
+            <img src="./assets/project-2.png" alt="Project 2" class="project-img" />
+            <div class="project-overlay">
+              <button class="btn btn-sm"
+                onclick="location.href='https://github.com/alvccpj/backend-laboratory'">GitHub</button>
+            </div>
+          </div>
+          <h2 class="project-title" data-i18n="projects.p2Title">Rest API for people management</h2>
+          <p class="project-tech">Java · Spring Boot · MySQL</p>
+        </div>
+        <div class="details-container color-container project-card reveal">
+          <div class="project-img-wrapper">
+            <img src="./assets/project-3.png" alt="Project 3" class="project-img" />
+            <div class="project-overlay">
+              <button class="btn btn-sm"
+                onclick="location.href='https://github.com/alvccpj/organiza-application'">GitHub</button>
+            </div>
+          </div>
+          <h2 class="project-title" data-i18n="projects.p3Title">Organiza App: Finance Management</h2>
+          <p class="project-tech">React · Node.js</p>
+        </div>
+      </div>
+    </div>
+    <div class="arrow-container">
+      <img src="./assets/arrow.png" alt="Arrow" class="icon arrow" onclick="location.href='#contact'" />
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section id="contact">
+    <div class="section-orb contact-orb"></div>
+    <div class="section-header reveal">
+      <p class="section__text__p1" data-i18n="contact.subheading">Get In Touch</p>
+      <h1 class="title" data-i18n="contact.title">Contact Me</h1>
+    </div>
+    <div class="contact-info-upper-container glass-card reveal">
+      <div class="contact-info-container">
+        <img src="./assets/email.png" alt="Email" class="icon contact-icon email-icon" />
+        <p><a href="mailto:dev.alvarojordao@gmail.com">dev.alvarojordao@gmail.com</a></p>
+      </div>
+      <div class="contact-divider"></div>
+      <div class="contact-info-container">
+        <img src="./assets/linkedin.png" alt="LinkedIn" class="icon contact-icon" />
+        <p><a href="https://www.linkedin.com/in/devalvarojordao/" target="_blank">LinkedIn</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <nav>
+      <ul class="nav-links footer-links">
+        <li><a href="#about" data-i18n="nav.about">About</a></li>
+        <li><a href="#experience" data-i18n="nav.experience">Experience</a></li>
+        <li><a href="#projects" data-i18n="nav.projects">Projects</a></li>
+        <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
+      </ul>
+    </nav>
+    <p class="footer-copy" data-i18n="footer.copyright">Copyright &#169; 2026 Álvaro Jordão. All Rights Reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
 </html>
