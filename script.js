@@ -31,7 +31,7 @@ const translations = {
     "about.educationTitle": "Education",
     "about.educationDesc": "Computer Science — UNINASSAU",
     "about.educationShift": "Shift: Night",
-    "about.bio": "Hi, my name is Álvaro, I'm a 6th period Computer Science student. I am very interested in the world of technology and software development, mainly in Cloud Computing and Backend.",
+    "about.bio": "Hi, my name is Álvaro, I'm a 7th period Computer Science student and a Salesforce Developer focused on Full Stack. I am also interested in Data Analysis, DevOps, Cloud Computing, AI, and Machine Learning.",
 
     "experience.subheading": "Explore My",
     "experience.title": "Experience",
@@ -44,9 +44,10 @@ const translations = {
 
     "projects.subheading": "Browse My Recent",
     "projects.title": "Projects",
-    "projects.p1Title": "My first portfolio",
-    "projects.p2Title": "Rest API for people management",
-    "projects.p3Title": "Organiza App: Finance Management",
+    "projects.p1Title": "Barbearia Unity",
+    "projects.p2Title": "Auto Center Caxangá",
+    "projects.p3Title": "Master BPO: Finance Management",
+    "projects.inDevelopment": "In Development",
 
     "contact.subheading": "Get In Touch",
     "contact.title": "Contact Me",
@@ -72,7 +73,7 @@ const translations = {
     "about.educationTitle": "Educação",
     "about.educationDesc": "Ciência da Computação — UNINASSAU",
     "about.educationShift": "Turno: Noturno",
-    "about.bio": "Olá, meu nome é Álvaro, sou estudante do 6º período de Ciência da Computação. Tenho grande interesse no mundo da tecnologia e desenvolvimento de software, principalmente em Cloud Computing e Backend.",
+    "about.bio": "Olá, meu nome é Álvaro, sou estudante do 7º período de Ciência da Computação e Desenvolvedor Salesforce com foco em Full Stack. Também tenho interesse em Análise de Dados, DevOps, Cloud Computing, IA e Machine Learning.",
 
     "experience.subheading": "Explore Minha",
     "experience.title": "Experiência",
@@ -85,9 +86,10 @@ const translations = {
 
     "projects.subheading": "Veja Meus Recentes",
     "projects.title": "Projetos",
-    "projects.p1Title": "Meu primeiro portfólio",
-    "projects.p2Title": "API REST para gestão de pessoas",
-    "projects.p3Title": "Organiza App: Gestão Financeira",
+    "projects.p1Title": "Barbearia Unity",
+    "projects.p2Title": "Auto Center Caxangá",
+    "projects.p3Title": "Master BPO: Gestão Financeira",
+    "projects.inDevelopment": "Em Desenvolvimento",
 
     "contact.subheading": "Entre em Contato",
     "contact.title": "Fale Comigo",
